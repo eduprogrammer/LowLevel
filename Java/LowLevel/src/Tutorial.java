@@ -7,8 +7,6 @@
  *
  *  To do:
  *      Binary
- *          - Subtract
- *          - Multiply
  *          - Divide
  *
  *      Hexadecimal
@@ -25,10 +23,10 @@ import com.eduardoprogramador.lowlevel.LowLevelException;
 public class Tutorial {
     public static void main(String[] args) {
 
-        Binary binary = new Binary("100110");
+        Binary binary = new Binary("110100","11");
 
         try {
-            String res = "" + binary.not();
+            String res = "" + binary.multiply();
             System.out.println(res);
         } catch (LowLevelException ex) {
             ex.printStackTrace();

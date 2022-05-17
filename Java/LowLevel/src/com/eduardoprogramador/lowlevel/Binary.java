@@ -334,4 +334,83 @@ public class Binary extends Number {
         }
         return res;
     }
+
+    @Override
+    public String subtract() throws LowLevelException {
+        if(first == null || second == null) {
+            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
+        }
+        if(smallest(first, second) == 0) {
+            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
+        } else {
+
+            second = fillWithZeros(first.length() - second.length(),second);
+            second = not(second);
+            second = add(second,"1");
+
+            String prov = add(first,second);
+            String res = "";
+            for (int i = 1; i < prov.length(); i++) {
+                if(prov.charAt(i) == '1') {
+                    res += 1;
+                } else {
+                    res += 0;
+                }
+            }
+            return res;
+        }
+    }
+
+    @Override
+    public String subtract(String numOne, String numTwo) throws LowLevelException {
+        if(smallest(numOne, numTwo) == 0) {
+            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
+        } else {
+
+            numTwo = fillWithZeros(numOne.length() - numTwo.length(),numTwo);
+            numTwo = not(numTwo);
+            numTwo = add(numTwo,"1");
+
+            String prov = add(numOne,numTwo);
+            String res = "";
+            for (int i = 1; i < prov.length(); i++) {
+                if(prov.charAt(i) == '1') {
+                    res += 1;
+                } else {
+                    res += 0;
+                }
+            }
+            return res;
+        }
+    }
+
+    @Override
+    public String multiply() throws LowLevelException {
+        if(first == null || second == null) {
+            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
+        } else {
+            if(second.equalsIgnoreCase("1"))
+                return first;
+            String twoInDecimal = toDecimal(second);
+            int two = Integer.valueOf(twoInDecimal);
+            String res = first;
+            for (int i = 0; i < two - 1; i++) {
+                res = add(res,first);
+            }
+            return res;
+        }
+    }
+
+    @Override
+    public String multiply(String num, String by) { //3,4
+        if(by.equalsIgnoreCase("1"))
+            return num;
+        String twoInDecimal = toDecimal(by);
+        int two = Integer.valueOf(twoInDecimal);
+        String res = num;
+        for (int i = 0; i < two - 1; i++) {
+            res = add(res,num);
+        }
+        return res;
+    }
 }
