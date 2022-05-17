@@ -46,4 +46,12 @@ public abstract class Number {
     protected abstract String fillWithZeros(int count) throws LowLevelException;
 
     protected abstract String fillWithZeros(int count, String number);
+
+    protected abstract String subtract() throws LowLevelException;
+
+    protected abstract String subtract(String numOne, String numTwo) throws LowLevelException;
+
+    protected abstract String multiply() throws LowLevelException;
+
+    protected abstract String multiply(String num, String by);
 }
