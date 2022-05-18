@@ -54,4 +54,12 @@ public abstract class Number {
     protected abstract String multiply() throws LowLevelException;
 
     protected abstract String multiply(String num, String by);
+
+    protected abstract String divide() throws LowLevelException;
+
+    protected abstract String divide(String numOne, String by) throws LowLevelException;
+
+    protected abstract String modulus() throws LowLevelException;
+
+    protected abstract String modulus(String numOne, String by) throws LowLevelException;
 }

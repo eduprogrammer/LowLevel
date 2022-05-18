@@ -181,7 +181,6 @@ public class Binary extends Number {
             int zeroOne = 0;
             int zeroTwo = 0;
 
-
             if(filterOne.length() < filterTwo.length()) {
                 return 0;
             } else if(filterOne.length() > filterTwo.length()) {
@@ -198,7 +197,8 @@ public class Binary extends Number {
                         zeroTwo += i;
                     }
                 }
-                if(zeroOne < zeroTwo) {
+
+                if(zeroOne > zeroTwo) {
                     return 0;
                 } else {
                     return 1;
@@ -234,7 +234,7 @@ public class Binary extends Number {
                     zeroTwo += i;
                 }
             }
-            if(zeroOne < zeroTwo) {
+            if(zeroOne > zeroTwo) {
                 return 0;
             } else {
                 return 1;
@@ -310,11 +310,11 @@ public class Binary extends Number {
             throw new LowLevelException("You must to load the Binary Class with the construct that has a valid binary inside.");
         } else {
             String res = "";
-            for (int i = number.length() - 1; i > -1 ; i--) {
+            for (int i = 0; i < number.length() ; i++) {
                 if(number.charAt(i) == '1') {
-                    res += 1;
-                } else {
                     res += 0;
+                } else {
+                    res += 1;
                 }
 
             }
@@ -324,11 +324,11 @@ public class Binary extends Number {
 
     public String not(String binary) {
         String res = "";
-        for (int i = binary.length() - 1; i > -1 ; i--) {
+        for (int i = 0; i < binary.length() ; i++) {
             if(binary.charAt(i) == '1') {
-                res += 1;
-            } else {
                 res += 0;
+            } else {
+                res += 1;
             }
 
         }
@@ -344,6 +344,9 @@ public class Binary extends Number {
             throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
         } else {
 
+            if(second.equalsIgnoreCase("0"))
+                return first;
+
             second = fillWithZeros(first.length() - second.length(),second);
             second = not(second);
             second = add(second,"1");
@@ -357,7 +360,7 @@ public class Binary extends Number {
                     res += 0;
                 }
             }
-            return res;
+            return cutZeros(res);
         }
     }
 
@@ -367,6 +370,8 @@ public class Binary extends Number {
             throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
         } else {
 
+            if(numTwo.equalsIgnoreCase("0"))
+                return numOne;
             numTwo = fillWithZeros(numOne.length() - numTwo.length(),numTwo);
             numTwo = not(numTwo);
             numTwo = add(numTwo,"1");
@@ -380,7 +385,7 @@ public class Binary extends Number {
                     res += 0;
                 }
             }
-            return res;
+            return cutZeros(res);
         }
     }
 
@@ -391,6 +396,8 @@ public class Binary extends Number {
         } else {
             if(second.equalsIgnoreCase("1"))
                 return first;
+            if(first.equalsIgnoreCase("0") || second.equalsIgnoreCase("0"))
+                return "0";
             String twoInDecimal = toDecimal(second);
             int two = Integer.valueOf(twoInDecimal);
             String res = first;
@@ -402,9 +409,11 @@ public class Binary extends Number {
     }
 
     @Override
-    public String multiply(String num, String by) { //3,4
+    public String multiply(String num, String by) {
         if(by.equalsIgnoreCase("1"))
             return num;
+        if(num.equalsIgnoreCase("0") || by.equalsIgnoreCase("0"))
+            return "0";
         String twoInDecimal = toDecimal(by);
         int two = Integer.valueOf(twoInDecimal);
         String res = num;
@@ -412,5 +421,139 @@ public class Binary extends Number {
             res = add(res,num);
         }
         return res;
+    }
+
+    @Override
+    public String divide() throws LowLevelException {
+
+        if(first == null || second == null) {
+            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
+        } else {
+            first = cutZeros(first);
+            second = cutZeros(second);
+
+            if(second.equalsIgnoreCase("1")) {
+                return first;
+            }
+            String dividend = "";
+            String quotient = "";
+            String nowQuo = "";
+
+            for (int i = 0; i < first.length(); i++) {
+
+                int actual = first.charAt(i) == '1' ? 1 : 0;
+                dividend += actual;
+                if(smallest(dividend,second) == 0) {
+                    quotient += 0;
+                    nowQuo = "0";
+                } else {
+                    quotient += 1;
+                    nowQuo = "1";
+                }
+                String mul = multiply(nowQuo,second);
+                dividend = subtract(dividend,mul);
+            }
+            return cutZeros(quotient);
+        }
+    }
+
+    @Override
+    public String divide(String numOne, String by) throws LowLevelException {
+
+        if(smallest(numOne, by) == 0) {
+            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
+        } else {
+            numOne = cutZeros(numOne);
+            by = cutZeros(by);
+
+            if(by.equalsIgnoreCase("1")) {
+                return numOne;
+            }
+            String dividend = "";
+            String quotient = "";
+            String nowQuo = "";
+
+            for (int i = 0; i < numOne.length(); i++) {
+
+                int actual = numOne.charAt(i) == '1' ? 1 : 0;
+                dividend += actual;
+                if(smallest(dividend,by) == 0) {
+                    quotient += 0;
+                    nowQuo = "0";
+                } else {
+                    quotient += 1;
+                    nowQuo = "1";
+                }
+                String mul = multiply(nowQuo,by);
+                dividend = subtract(dividend,mul);
+            }
+            return cutZeros(quotient);
+        }
+    }
+
+    @Override
+    public String modulus() throws LowLevelException {
+        if(first == null || second == null) {
+            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
+        } else {
+            first = cutZeros(first);
+            second = cutZeros(second);
+
+            if(second.equalsIgnoreCase("1")) {
+                return first;
+            }
+            String dividend = "";
+            String quotient = "";
+            String nowQuo = "";
+
+            for (int i = 0; i < first.length(); i++) {
+
+                int actual = first.charAt(i) == '1' ? 1 : 0;
+                dividend += actual;
+                if(smallest(dividend,second) == 0) {
+                    quotient += 0;
+                    nowQuo = "0";
+                } else {
+                    quotient += 1;
+                    nowQuo = "1";
+                }
+                String mul = multiply(nowQuo,second);
+                dividend = subtract(dividend,mul);
+            }
+            return cutZeros(dividend);
+        }
+    }
+
+    @Override
+    public String modulus(String numOne, String by) throws LowLevelException {
+        if(smallest(numOne, by) == 0) {
+            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
+        } else {
+            numOne = cutZeros(numOne);
+            by = cutZeros(by);
+
+            if(by.equalsIgnoreCase("1")) {
+                return numOne;
+            }
+            String dividend = "";
+            String quotient = "";
+            String nowQuo = "";
+
+            for (int i = 0; i < numOne.length(); i++) {
+
+                int actual = numOne.charAt(i) == '1' ? 1 : 0;
+                dividend += actual;
+                if(smallest(dividend,by) == 0) {
+                    quotient += 0;
+                    nowQuo = "0";
+                } else {
+                    quotient += 1;
+                    nowQuo = "1";
+                }
+                String mul = multiply(nowQuo,by);
+                dividend = subtract(dividend,mul);
+            }
+            return cutZeros(dividend);
+        }
     }
 }

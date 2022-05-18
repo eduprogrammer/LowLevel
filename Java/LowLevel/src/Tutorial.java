@@ -6,8 +6,15 @@
  *   All Rights Reserved.
  *
  *  To do:
- *      Binary
- *          - Divide
+ *
+ *      Binary:
+ *          Translate To:
+ *              1. Javascript
+ *              2. PHP
+ *              3. C++
+ *              4. Ruby
+ *              5. Python
+ *              6. HLA (Assembly)
  *
  *      Hexadecimal
  *          - (All)
@@ -23,10 +30,10 @@ import com.eduardoprogramador.lowlevel.LowLevelException;
 public class Tutorial {
     public static void main(String[] args) {
 
-        Binary binary = new Binary("110100","11");
+        Binary binary = new Binary();
 
         try {
-            String res = "" + binary.multiply();
+            String res = "" + binary.modulus("101001","11");
             System.out.println(res);
         } catch (LowLevelException ex) {
             ex.printStackTrace();
