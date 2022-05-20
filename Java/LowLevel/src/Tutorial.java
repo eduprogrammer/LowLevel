@@ -9,7 +9,6 @@
  *
  *      Binary:
  *          Translate To:
- *              1. Javascript
  *              2. PHP
  *              3. C++
  *              4. Ruby
