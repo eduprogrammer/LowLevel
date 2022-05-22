@@ -98,6 +98,9 @@ class Number {
     fillWithZeros(count){};
     //fillWithZeros(count,number){};
 
+    not(){};
+    //not(binary){};
+
     subtract(){};
     //subtract(numOne, numTwo){};
 
@@ -538,137 +541,11 @@ class Binary extends Number {
     }
 
     divide() {
-        if(arguments.length == 0) {
-            if(this.first == null || this.second == null) {
-                throw new LowLevelException(1);
-            } else {
-                this.first = this.cutZeros(this.first);
-                this.second = this.cutZeros(this.second);
-    
-                if(this.second.localeCompare('1') == 0) {
-                    return this.first;
-                }
-                let dividend = "";
-                let quotient = "";
-                let nowQuo = "";
-    
-                for (let i = 0; i < this.first.length; i++) {
-    
-                    let actual = this.first[i] == '1' ? 1 : 0;
-                    dividend += actual;
-                    if(this.smallest(dividend,this.second) == 0) {
-                        quotient += 0;
-                        nowQuo = "0";
-                    } else {
-                        quotient += 1;
-                        nowQuo = "1";
-                    }
-                    let mul = this.multiply(nowQuo,this.second);
-                    dividend = this.subtract(dividend,mul);
-                }
-                return this.cutZeros(quotient);
-            }
-        } else if(arguments.length == 2) {
-            let numOne = arguments[0];
-            let by = arguments[1];
-
-            if(this.smallest(numOne, by) == 0) {
-                throw new LowLevelException(2);
-            } else {
-                numOne = this.cutZeros(numOne);
-                by = this.cutZeros(by);
-    
-                if(by.localeCompare('1') == 0) {
-                    return numOne;
-                }
-                let dividend = "";
-                let quotient = "";
-                let nowQuo = "";
-    
-                for (let i = 0; i < numOne.length; i++) {
-    
-                    let actual = numOne[i] == '1' ? 1 : 0;
-                    dividend += actual;
-                    if(this.smallest(dividend,by) == 0) {
-                        quotient += 0;
-                        nowQuo = "0";
-                    } else {
-                        quotient += 1;
-                        nowQuo = "1";
-                    }
-                    let mul = this.multiply(nowQuo,by);
-                    dividend = this.subtract(dividend,mul);
-                }
-                return this.cutZeros(quotient);
-            }
-        }
+        //code...
     }
 
     modulus() {
-        if(arguments.length == 0) {
-            if(this.first == null || this.second == null) {
-                throw new LowLevelException(1);
-            } else {
-                this.first = this.cutZeros(this.first);
-                this.second = this.cutZeros(this.second);
-    
-                if(this.second.localeCompare('1') == 0) {
-                    return this.first;
-                }
-                let dividend = "";
-                let quotient = "";
-                let nowQuo = "";
-    
-                for (let i = 0; i < this.first.length; i++) {
-    
-                    let actual = this.first[i] == '1' ? 1 : 0;
-                    dividend += actual;
-                    if(this.smallest(dividend,this.second) == 0) {
-                        quotient += 0;
-                        nowQuo = "0";
-                    } else {
-                        quotient += 1;
-                        nowQuo = "1";
-                    }
-                    let mul = this.multiply(nowQuo,this.second);
-                    dividend = this.subtract(dividend,mul);
-                }
-                return this.cutZeros(dividend);
-            }
-        } else if(arguments.length == 2) {
-            let numOne = arguments[0];
-            let by = arguments[1];
-
-            if(this.smallest(numOne, by) == 0) {
-                throw new LowLevelException(2);
-            } else {
-                numOne = this.cutZeros(numOne);
-                by = this.cutZeros(by);
-    
-                if(by.localeCompare('1') == 0) {
-                    return numOne;
-                }
-                let dividend = "";
-                let quotient = "";
-                let nowQuo = "";
-    
-                for (let i = 0; i < numOne.length; i++) {
-    
-                    let actual = numOne[i] == '1' ? 1 : 0;
-                    dividend += actual;
-                    if(this.smallest(dividend,by) == 0) {
-                        quotient += 0;
-                        nowQuo = "0";
-                    } else {
-                        quotient += 1;
-                        nowQuo = "1";
-                    }
-                    let mul = this.multiply(nowQuo,by);
-                    dividend = this.subtract(dividend,mul);
-                }
-                return this.cutZeros(dividend);
-            }
-        }
+        //code...
     }
     
 }

@@ -36,17 +36,19 @@ abstract class Number {
 
     protected abstract function smallest($numOne = NULL, $numTwo = NULL) : int;    
 
-    protected abstract function cutZeros() : string;    
+    protected abstract function cutZeros($number = NULL) : string;    
 
-    protected abstract function fillWithZeros($count) : string;    
+    protected abstract function fillWithZeros($count, $binary = NULL) : string;   
+    
+    protected abstract function not($binary = NULL) : string;
 
-    protected abstract function subtract() : string;    
+    protected abstract function subtract($numOne = NULL, $numTwo = NULL) : string;    
 
-    protected abstract function multiply() : string;    
+    protected abstract function multiply($num = NULL, $by = NULL) : string;    
 
-    protected abstract function divide() : string;    
+    protected abstract function divide($numOne = NULL, $by = NULL) : string;    
 
-    protected abstract function modulus() : string;    
+    protected abstract function modulus($numOne = NULL, $by = NULL) : string;    
 }
 
 ?>

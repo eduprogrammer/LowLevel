@@ -425,135 +425,25 @@ public class Binary extends Number {
 
     @Override
     public String divide() throws LowLevelException {
-
-        if(first == null || second == null) {
-            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
-        } else {
-            first = cutZeros(first);
-            second = cutZeros(second);
-
-            if(second.equalsIgnoreCase("1")) {
-                return first;
-            }
-            String dividend = "";
-            String quotient = "";
-            String nowQuo = "";
-
-            for (int i = 0; i < first.length(); i++) {
-
-                int actual = first.charAt(i) == '1' ? 1 : 0;
-                dividend += actual;
-                if(smallest(dividend,second) == 0) {
-                    quotient += 0;
-                    nowQuo = "0";
-                } else {
-                    quotient += 1;
-                    nowQuo = "1";
-                }
-                String mul = multiply(nowQuo,second);
-                dividend = subtract(dividend,mul);
-            }
-            return cutZeros(quotient);
-        }
+        //code
+        return null;
     }
 
     @Override
     public String divide(String numOne, String by) throws LowLevelException {
-
-        if(smallest(numOne, by) == 0) {
-            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
-        } else {
-            numOne = cutZeros(numOne);
-            by = cutZeros(by);
-
-            if(by.equalsIgnoreCase("1")) {
-                return numOne;
-            }
-            String dividend = "";
-            String quotient = "";
-            String nowQuo = "";
-
-            for (int i = 0; i < numOne.length(); i++) {
-
-                int actual = numOne.charAt(i) == '1' ? 1 : 0;
-                dividend += actual;
-                if(smallest(dividend,by) == 0) {
-                    quotient += 0;
-                    nowQuo = "0";
-                } else {
-                    quotient += 1;
-                    nowQuo = "1";
-                }
-                String mul = multiply(nowQuo,by);
-                dividend = subtract(dividend,mul);
-            }
-            return cutZeros(quotient);
-        }
+        //code
+        return null;
     }
 
     @Override
     public String modulus() throws LowLevelException {
-        if(first == null || second == null) {
-            throw new LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.");
-        } else {
-            first = cutZeros(first);
-            second = cutZeros(second);
-
-            if(second.equalsIgnoreCase("1")) {
-                return first;
-            }
-            String dividend = "";
-            String quotient = "";
-            String nowQuo = "";
-
-            for (int i = 0; i < first.length(); i++) {
-
-                int actual = first.charAt(i) == '1' ? 1 : 0;
-                dividend += actual;
-                if(smallest(dividend,second) == 0) {
-                    quotient += 0;
-                    nowQuo = "0";
-                } else {
-                    quotient += 1;
-                    nowQuo = "1";
-                }
-                String mul = multiply(nowQuo,second);
-                dividend = subtract(dividend,mul);
-            }
-            return cutZeros(dividend);
-        }
+        //code
+        return null;
     }
 
     @Override
     public String modulus(String numOne, String by) throws LowLevelException {
-        if(smallest(numOne, by) == 0) {
-            throw new LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.");
-        } else {
-            numOne = cutZeros(numOne);
-            by = cutZeros(by);
-
-            if(by.equalsIgnoreCase("1")) {
-                return numOne;
-            }
-            String dividend = "";
-            String quotient = "";
-            String nowQuo = "";
-
-            for (int i = 0; i < numOne.length(); i++) {
-
-                int actual = numOne.charAt(i) == '1' ? 1 : 0;
-                dividend += actual;
-                if(smallest(dividend,by) == 0) {
-                    quotient += 0;
-                    nowQuo = "0";
-                } else {
-                    quotient += 1;
-                    nowQuo = "1";
-                }
-                String mul = multiply(nowQuo,by);
-                dividend = subtract(dividend,mul);
-            }
-            return cutZeros(dividend);
-        }
+        //code
+        return null;
     }
 }

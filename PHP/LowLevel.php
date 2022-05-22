@@ -15,7 +15,7 @@ class LowLevelImplementation {
         $res .= $number;        
         $resF = "";
         for ($i = strlen($res) - 1; $i > -1; $i--) {
-            $resF += $res[i];
+            $resF .= $res[$i];
         }
         return $resF;
     }
@@ -25,13 +25,13 @@ class LowLevel {
 
     public function __construct(){}
     
-    public static function reversed($chars) {
+    public static function reversed($chars) : string {
         $reversed = "";
         for ($i = strlen($chars) - 1; $i > -1; $i--) {
-            if(strcmp($chars[i],'0') == 0 ) {
-                $reversed .= 0;
-            } else {
-                $reversed .= 1;
+            if(strcmp($chars[$i], '0') == 0) {
+                $reversed .= '0';
+            } else if(strcmp($chars[$i], '1') == 0)  {
+                $reversed .= '1';
             }            
         }        
         return $reversed;
