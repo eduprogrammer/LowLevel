@@ -13,7 +13,7 @@ abstract class Number {
     protected $number;
     protected $first, $second;
 
-    public function __construct($first, $second) {
+    public function __construct($first = NULL, $second = NULL) {
         if($first == NULL && $second == NULL) {
             $this->first = NULL;
             $this->second = NULL;
@@ -30,11 +30,11 @@ abstract class Number {
         return array("Binary,Hexadecimal,Octal");        
     }
 
-    protected abstract function toDecimal() : string;    
+    protected abstract function toDecimal($number = NULL) : string;    
 
-    protected abstract function add() : string;    
+    protected abstract function add($numOne = NULL, $numTwo = NULL) : string;    
 
-    protected abstract function smallest() : int;    
+    protected abstract function smallest($numOne = NULL, $numTwo = NULL) : int;    
 
     protected abstract function cutZeros() : string;    
 
