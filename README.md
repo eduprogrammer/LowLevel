@@ -7,24 +7,24 @@ with number outside the decimal System in many languages.<br>
 Available in:<br>
 	(x) Java<br>
 	(x) Javascript<br>
-	(x) PHP - doing...<br>
-	( ) C++ - doing...<br>
-	( ) Ruby - doing...<br>
-	( ) Python - doing...<br>
-	( ) Assembly - doing...<br>
+	(x) PHP<br>
+	( ) C++<br>
+	( ) Ruby<br>
+	( ) Python<br>
+	( ) Assembly<br>
 <br>
 The library includes:<br>
 	Operations with Binary Numbers:<br>
 		(x) Addition<br>
 		(x) Subtraction<br>
 		(x) Multiplication<br>
-		(x) Division<br>
+		( ) Division<br>
 <br>
 	Hexadecimal:<br>
-		(doing..) <br>
+		 <br>
 <br>
 	Octal:<br>
-		(doing...)<br>
+		<br>
 
 
 

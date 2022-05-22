@@ -29,10 +29,10 @@ import com.eduardoprogramador.lowlevel.LowLevelException;
 public class Tutorial {
     public static void main(String[] args) {
 
-        Binary binary = new Binary();
+        Binary binary = new Binary("10110111001","11010");
 
         try {
-            String res = "" + binary.modulus("101001","11");
+            String res = "" + binary.subtract();
             System.out.println(res);
         } catch (LowLevelException ex) {
             ex.printStackTrace();
