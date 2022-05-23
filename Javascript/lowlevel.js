@@ -280,30 +280,25 @@ class Binary extends Number {
                 let filterTwo = this.cutZeros(this.second);
                 let zeroOne = 0;
                 let zeroTwo = 0;
-    
-                if(filterOne.length < filterTwo.length) {
-                    return 0;
-                } else if(filterOne.length > filterTwo.length) {
-                    return 1;
-                } else {
+                    
                     for (let i = 0; i < filterOne.length; i++) {
-                        if(filterOne[i] == '0') {
+                        if(filterOne[i] == '1') {
                             zeroOne += i;
                         }
     
                     }
                     for (let i = 0; i < filterTwo.length; i++) {
-                        if(filterTwo[i] == '0') {
+                        if(filterTwo[i] == '1') {
                             zeroTwo += i;
                         }
                     }
     
-                    if(zeroOne > zeroTwo) {
+                    if(zeroOne < zeroTwo) {
                         return 0;
                     } else {
                         return 1;
                     }
-                }
+                
     
             }
         } else if(arguments.length == 2) {
@@ -314,30 +309,24 @@ class Binary extends Number {
         let filterTwo = this.cutZeros(numTwo);
         let zeroOne = 0;
         let zeroTwo = 0;
-
-
-        if(filterOne.length < filterTwo.length) {
-            return 0;
-        } else if(filterOne.length > filterTwo.length) {
-            return 1;
-        } else {
+        
             for (let i = 0; i < filterOne.length; i++) {
-                if(filterOne[i] == '0') {
+                if(filterOne[i] == '1') {
                     zeroOne += i;
                 }
 
             }
             for (let i = 0; i < filterTwo.length; i++) {
-                if(filterTwo[i] == '0') {
+                if(filterTwo[i] == '1') {
                     zeroTwo += i;
                 }
             }
-            if(zeroOne > zeroTwo) {
+            if(zeroOne < zeroTwo) {
                 return 0;
             } else {
                 return 1;
             }
-        }
+        
 
         }        
 
@@ -541,11 +530,97 @@ class Binary extends Number {
     }
 
     divide() {
-        //code...
+        if(arguments.length == 0) {
+            if(this.first == null || this.second == null) {
+                throw new LowLevelException(1);
+            }
+            let div = "";
+        let quotient = "";
+        let nowQuo = "";
+        for (let i = 0; i < this.first.length; i++) {
+            let now = this.first[i].localeCompare('1') == 0 ? 1 : 0;
+            div += now;
+            if(this.smallest(div,this.second) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            let mul = this.multiply(this.second, nowQuo);
+            div = this.subtract(div,mul);
+        }
+        return this.cutZeros(quotient);
+        } else if(arguments.length == 2) {
+            let numOne = arguments[0];
+            let by = arguments[1];
+
+            let div = "";
+        let quotient = "";
+        let nowQuo = "";
+        for (let i = 0; i < numOne.length; i++) {
+            let now = numOne[i].localeCompare('1') == 0 ? 1 : 0;
+            div += now;
+            if(this.smallest(div,by) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            let mul = this.multiply(by, nowQuo);
+            div = this.subtract(div,mul);
+        }
+        return this.cutZeros(quotient);
+
+        }
     }
 
     modulus() {
-        //code...
+        if(arguments.length == 0) {
+            if(this.first == null || this.second == null) {
+                throw new LowLevelException(1);
+            }
+            let div = "";
+        let quotient = "";
+        let nowQuo = "";
+        for (let i = 0; i < this.first.length; i++) {
+            let now = this.first[i].localeCompare('1') == 0 ? 1 : 0;
+            div += now;
+            if(this.smallest(div,this.second) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            let mul = this.multiply(this.second, nowQuo);
+            div = this.subtract(div,mul);
+        }
+        return this.cutZeros(div);
+        } else if(arguments.length == 2) {
+            let numOne = arguments[0];
+            let by = arguments[1];
+
+            let div = "";
+        let quotient = "";
+        let nowQuo = "";
+        for (let i = 0; i < numOne.length; i++) {
+            let now = numOne[i].localeCompare('1') == 0 ? 1 : 0;
+            div += now;
+            if(this.smallest(div,by) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            let mul = this.multiply(by, nowQuo);
+            div = this.subtract(div,mul);
+        }
+        return this.cutZeros(div);
+
+        }
     }
     
 }

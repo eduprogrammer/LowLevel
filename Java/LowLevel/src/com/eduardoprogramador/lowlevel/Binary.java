@@ -181,29 +181,24 @@ public class Binary extends Number {
             int zeroOne = 0;
             int zeroTwo = 0;
 
-            if(filterOne.length() < filterTwo.length()) {
-                return 0;
-            } else if(filterOne.length() > filterTwo.length()) {
-                return 1;
-            } else {
                 for (int i = 0; i < filterOne.length(); i++) {
-                    if(filterOne.charAt(i) == '0') {
+                    if(filterOne.charAt(i) == '1') {
                         zeroOne += i;
                     }
 
                 }
                 for (int i = 0; i < filterTwo.length(); i++) {
-                    if(filterTwo.charAt(i) == '0') {
+                    if(filterTwo.charAt(i) == '1') {
                         zeroTwo += i;
                     }
                 }
 
-                if(zeroOne > zeroTwo) {
+                if(zeroOne < zeroTwo) {
                     return 0;
                 } else {
                     return 1;
                 }
-            }
+
 
         }
 
@@ -217,29 +212,23 @@ public class Binary extends Number {
         int zeroOne = 0;
         int zeroTwo = 0;
 
-
-        if(filterOne.length() < filterTwo.length()) {
-            return 0;
-        } else if(filterOne.length() > filterTwo.length()) {
-            return 1;
-        } else {
             for (int i = 0; i < filterOne.length(); i++) {
-                if(filterOne.charAt(i) == '0') {
+                if(filterOne.charAt(i) == '1') {
                     zeroOne += i;
                 }
 
             }
             for (int i = 0; i < filterTwo.length(); i++) {
-                if(filterTwo.charAt(i) == '0') {
+                if(filterTwo.charAt(i) == '1') {
                     zeroTwo += i;
                 }
             }
-            if(zeroOne > zeroTwo) {
+            if(zeroOne < zeroTwo) {
                 return 0;
             } else {
                 return 1;
             }
-        }
+
     }
 
     @Override
@@ -425,25 +414,85 @@ public class Binary extends Number {
 
     @Override
     public String divide() throws LowLevelException {
-        //code
-        return null;
+        String div = "";
+        String quotient = "";
+        String nowQuo = "";
+        for (int i = 0; i < first.length(); i++) {
+            int now = first.charAt(i) == '1' ? 1 : 0;
+            div += now;
+            if(smallest(div,second) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            String mul = multiply(second, nowQuo);
+            div = subtract(div,mul);
+        }
+        return cutZeros(quotient);
     }
 
     @Override
     public String divide(String numOne, String by) throws LowLevelException {
-        //code
-        return null;
+        String div = "";
+        String quotient = "";
+        String nowQuo = "";
+        for (int i = 0; i < numOne.length(); i++) {
+            int now = numOne.charAt(i) == '1' ? 1 : 0;
+            div += now;
+            if(smallest(div,by) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            String mul = multiply(by, nowQuo);
+            div = subtract(div,mul);
+        }
+        return cutZeros(quotient);
     }
 
     @Override
     public String modulus() throws LowLevelException {
-        //code
-        return null;
+        String div = "";
+        String quotient = "";
+        String nowQuo = "";
+        for (int i = 0; i < first.length(); i++) {
+            int now = first.charAt(i) == '1' ? 1 : 0;
+            div += now;
+            if(smallest(div,second) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            String mul = multiply(second, nowQuo);
+            div = subtract(div,mul);
+        }
+        return cutZeros(div);
     }
 
     @Override
     public String modulus(String numOne, String by) throws LowLevelException {
-        //code
-        return null;
+        String div = "";
+        String quotient = "";
+        String nowQuo = "";
+        for (int i = 0; i < numOne.length(); i++) {
+            int now = numOne.charAt(i) == '1' ? 1 : 0;
+            div += now;
+            if(smallest(div,by) == 0) {
+                quotient += 0;
+                nowQuo = "0";
+            } else {
+                quotient += 1;
+                nowQuo = "1";
+            }
+            String mul = multiply(by, nowQuo);
+            div = subtract(div,mul);
+        }
+        return cutZeros(div);
     }
 }

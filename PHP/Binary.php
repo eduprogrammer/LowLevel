@@ -168,14 +168,9 @@ require 'Number.php';
                     $filterTwo = $this->cutZeros($this->second);
                     $zeroOne = 0;
                     $zeroTwo = 0;
-        
-                    if(strlen($filterOne) < strlen($filterTwo)) {
-                        return 0;
-                    } else if(strlen($filterOne) > strlen($filterTwo)) {
-                        return 1;
-                    } else {
+                            
                         for ($i = 0; $i < strlen($filterOne); $i++) {
-                            if(strcmp($filterOne[$i], '0') == 0) {
+                            if(strcmp($filterOne[$i], '1') == 0) {
                                 $zeroOne += $i;
                             }
 
@@ -183,17 +178,17 @@ require 'Number.php';
         
                         }
                         for ($i = 0; $i < strlen($filterTwo); $i++) {
-                            if(strcmp($filterTwo[$i], '0') == 0) {
+                            if(strcmp($filterTwo[$i], '1') == 0) {
                                 $zeroTwo += $i;
                             }
                         }
         
-                        if($zeroOne > $zeroTwo) {
+                        if($zeroOne < $zeroTwo) {
                             return 0;
                         } else {
                             return 1;
                         }
-                    }
+                    
         
                 }
             } else if($numOne != NULL && $numTwo != NULL) {                
@@ -202,33 +197,27 @@ require 'Number.php';
                 $filterTwo = $this->cutZeros($numTwo);
                 $zeroOne = 0;
                 $zeroTwo = 0;
-    
-    
-            if(strlen($filterOne) < strlen($filterTwo)) {
-                return 0;
-            } else if(strlen($filterOne) > strlen($filterTwo)) {
-                return 1;
-            } else {
+                    
                 for ($i = 0; $i <strlen($filterOne); $i++) {
-                    if(strcmp($filterOne[$i], '0') == 0) {
+                    if(strcmp($filterOne[$i], '1') == 0) {
                         $zeroOne += $i;
                     }
                     
     
                 }
                 for ($i = 0; $i <strlen($filterTwo); $i++) {
-                    if(strcmp($filterTwo[$i], '0') == 0) {
+                    if(strcmp($filterTwo[$i], '1') == 0) {
                         $zeroTwo += $i;
                     }
                     
     
                 }
-                if($zeroOne > $zeroTwo) {
+                if($zeroOne < $zeroTwo) {
                     return 0;
                 } else {
                     return 1;
                 }
-            }
+            
     
             }
         }    
@@ -431,13 +420,93 @@ require 'Number.php';
         }
 
         public function divide($numOne = NULL, $by = NULL) : string {
-            //code
-            return '';
+            if($numOne == NULL && $by == NULL) {
+                if($this->first == NULL || $this->second == NULL) {
+                    throw new LowLevelException('1');
+                }
+                $div = "";
+            $quotient = "";
+            $nowQuo = "";
+            for ($i = 0; $i < strlen($this->first); $i++) {
+                $now =  strcmp($this->first[$i],'1') == 0 ? 1 : 0;
+                $div .= $now;
+                if($this->smallest($div,$this->second) == 0) {
+                    $quotient .= 0;
+                    $nowQuo = "0";
+                } else {
+                    $quotient .= 1;
+                    $nowQuo = "1";
+                }
+                $mul = $this->multiply($this->second, $nowQuo);
+                $div = $this->subtract($div,$mul);
+            }
+            return $this->cutZeros($quotient);
+            } else if($numOne != NULL && $by != NULL) {
+                    
+                $div = "";
+            $quotient = "";
+            $nowQuo = "";
+            for ($i = 0; $i < strlen($numOne); $i++) {
+                $now = strcmp($numOne[$i],'1') == 0 ? 1 : 0;
+                $div .= $now;
+                if($this->smallest($div,$by) == 0) {
+                    $quotient .= 0;
+                    $nowQuo = "0";
+                } else {
+                    $quotient .= 1;
+                    $nowQuo = "1";
+                }
+                $mul = $this->multiply($by, $nowQuo);
+                $div = $this->subtract($div,$mul);
+            }
+            return $this->cutZeros($quotient);
+    
+            }
         }
 
         public function modulus($numOne = NULL, $by = NULL) : string {
-            //code
-            return '';
+            if($numOne == NULL && $by == NULL) {
+                if($this->first == NULL || $this->second == NULL) {
+                    throw new LowLevelException('1');
+                }
+                $div = "";
+            $quotient = "";
+            $nowQuo = "";
+            for ($i = 0; $i < strlen($this->first); $i++) {
+                $now =  strcmp($this->first[$i],'1') == 0 ? 1 : 0;
+                $div .= $now;
+                if($this->smallest($div,$this->second) == 0) {
+                    $quotient .= 0;
+                    $nowQuo = "0";
+                } else {
+                    $quotient .= 1;
+                    $nowQuo = "1";
+                }
+                $mul = $this->multiply($this->second, $nowQuo);
+                $div = $this->subtract($div,$mul);
+            }
+            return $this->cutZeros($div);
+            } else if($numOne != NULL && $by != NULL) {
+                    
+                $div = "";
+            $quotient = "";
+            $nowQuo = "";
+            for ($i = 0; $i < strlen($numOne); $i++) {
+                $now = strcmp($numOne[$i],'1') == 0 ? 1 : 0;
+                $div .= $now;
+                if($this->smallest($div,$by) == 0) {
+                    $quotient .= 0;
+                    $nowQuo = "0";
+                } else {
+                    $quotient .= 1;
+                    $nowQuo = "1";
+                }
+                $mul = $this->multiply($by, $nowQuo);
+                $div = $this->subtract($div,$mul);
+            }
+            return $this->cutZeros($div);
+    
+            }
         }
     }
 ?>
