@@ -18,7 +18,7 @@ The library includes:<br>
 		(x) Addition<br>
 		(x) Subtraction<br>
 		(x) Multiplication<br>
-		( ) Division<br>
+		(x) Division<br>
 <br>
 	Hexadecimal:<br>
 		 <br>
