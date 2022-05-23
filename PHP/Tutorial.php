@@ -11,8 +11,8 @@
     $res2 = $lowLevel->decimalToBinary('252');
     echo('res2: ' . $res2 . '<br>');
 
-    $binary = new Binary('10110111001','11010');
-    $res3 = $binary->subtract();
-    echo('res20: ' . $res3 . '<br>');
+    $binary = new Binary();
+    $res3 = $binary->modulus('11010','11');
+    echo('res06: ' . $res3 . '<br>');
 
 ?>

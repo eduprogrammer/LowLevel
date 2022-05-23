@@ -23,14 +23,32 @@ public abstract class Number {
         this.second = second;
     }
 
+    /**
+     * @author Eduardo Programador
+     * @return The list of supported operations*
+     */
     public static String[] listNumberTypes() {
         return new String[]{"Binary,Hexadecimal,Octal"};
     }
 
+    /**
+     * @author Eduardo Programador
+     * @return A string of the decimal number*
+     * @deprecated
+     */
     protected abstract String toDecimal() throws LowLevelException;
 
+    /**
+     * @param number A binary number in String
+     * @author Eduardo Programador*
+     * @return A string of the decimal number
+     */
     protected abstract String toDecimal(String number);
 
+    /**
+     * @author Eduardo Programador*
+     * @return A string of the decimal number
+     */
     protected abstract String add() throws LowLevelException;
 
     protected abstract String add(String numOne, String numTwo);

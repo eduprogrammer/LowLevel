@@ -9,11 +9,10 @@
  *
  *      Binary:
  *          Translate To:
- *              2. PHP
- *              3. C++
- *              4. Ruby
- *              5. Python
- *              6. HLA (Assembly)
+ *              1. C++
+ *              2. Ruby
+ *              3. Python
+ *              4. HLA (Assembly)
  *
  *      Hexadecimal
  *          - (All)
@@ -29,10 +28,10 @@ import com.eduardoprogramador.lowlevel.LowLevelException;
 public class Tutorial {
     public static void main(String[] args) {
 
-        Binary binary = new Binary("10110111001","11010");
+        Binary binary = new Binary("11010");
 
         try {
-            String res = "" + binary.subtract();
+            String res = "" + binary.toDecimal();
             System.out.println(res);
         } catch (LowLevelException ex) {
             ex.printStackTrace();
