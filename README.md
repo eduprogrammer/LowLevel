@@ -8,7 +8,7 @@ Available in:<br>
 	(x) Java<br>
 	(x) Javascript<br>
 	(x) PHP<br>
-	( ) C++<br>
+	(x) C++<br>
 	( ) Ruby<br>
 	( ) Python<br>
 	( ) Assembly<br>
