@@ -1,7 +1,5 @@
 #include <iostream>
-#include "LowLevel.h"
-
-
+#include "Binary.h"
 
 using namespace std;
 
@@ -13,4 +11,18 @@ int main()
 	LowLevel::NumberSystem system = LowLevel::NumberSystem::init();
 	const char* res2 = system.decimalToBinary("209");
 	cout << res2 << endl;
+
+	const char **res3 = Number::listNumberTypes();
+	cout << res3[2] << endl;
+
+	Binary *binary = new Binary();
+	char *res4 = binary->toDecimal("11");
+
+	cout << "now2>>>> " << res4 << endl;
+
+
+	
+
+
+	
 }
