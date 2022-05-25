@@ -9,10 +9,9 @@
  *
  *      Binary:
  *          Translate To:
- *              1. C++
- *              2. Ruby
- *              3. Python
- *              4. HLA (Assembly)
+ *              1. Ruby
+ *              2. Python
+ *              3. HLA (Assembly)
  *
  *      Hexadecimal
  *          - (All)

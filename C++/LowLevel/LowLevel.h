@@ -1,3 +1,12 @@
+/*
+*   Copyright 2022. Eduardo Programador
+*   www.eduardoprogramador.com
+*   consultoria@eduardoprogramador.com
+*
+*   All Rights Reserved.
+*
+* */
+
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
