@@ -1,3 +1,12 @@
+/*
+*   Copyright 2022. Eduardo Programador
+*   www.eduardoprogramador.com
+*   consultoria@eduardoprogramador.com
+*
+*   All Rights Reserved.
+*
+* */
+
 #include <cstdlib>
 #include <cstring>
 
@@ -41,6 +50,8 @@ protected:
 	virtual char* cutZeros(const char* number) = 0;
 	virtual char* fillWithZeros(int count) = 0;
 	virtual char* fillWithZeros(int count, const char* number) = 0;
+	virtual char* NOT() = 0; 
+	virtual char* NOT(const char* binary) = 0;	
 	virtual char* subtract() = 0;
 	virtual char* subtract(const char* numOne, const char* numTwo) = 0;
 	virtual char* multiply() = 0;
