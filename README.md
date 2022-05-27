@@ -9,7 +9,7 @@ Available in:<br>
 	(x) Javascript<br>
 	(x) PHP<br>
 	(x) C++<br>
-	( ) Ruby<br>
+	(x) Ruby<br>
 	( ) Python<br>
 	( ) Assembly<br>
 <br>
