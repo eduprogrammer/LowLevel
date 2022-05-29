@@ -10,7 +10,7 @@ Available in:<br>
 	(x) PHP<br>
 	(x) C++<br>
 	(x) Ruby<br>
-	( ) Python<br>
+	(x) Python<br>
 	( ) Assembly<br>
 <br>
 The library includes:<br>
