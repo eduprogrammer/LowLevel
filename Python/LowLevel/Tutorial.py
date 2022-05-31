@@ -9,6 +9,8 @@
 
 from LowLevelException import *
 from LowLevel import *
+from Number import *
+from Binary import *
 
 res = LowLevel.reversed("011000010")
 print(res)
@@ -17,7 +19,17 @@ sys = LowLevel.NumberSystem.init()
 res1 = sys.decimalToBinary("23500")
 print(res1)
 
-#code...
+res2 = Number.listNumberTypes()
+print(res2)
+
+binary = Binary()
+res3 = binary.toDecimal("101110")
+print("res3: " + res3)
+
+
+
+
+
 
 
 
