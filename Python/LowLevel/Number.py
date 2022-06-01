@@ -30,17 +30,17 @@ class Number(ABC):
 #    def add(numOne = None, numTwo = None):
 #        pass
 
-#    @abstractmethod
-#    def smallest(numOne = None, numTwo = None):
-#        pass
+    @abstractmethod
+    def smallest(self, numOne = None, numTwo = None):
+        pass
 
-#    @abstractmethod
-#    def cutZeros(number = None):
-#        pass
+    @abstractmethod
+    def cutZeros(self, number = None):
+        pass
 
-#    @abstractmethod
-#    def fillWithZeros(count, number = None):
-#        pass
+    @abstractmethod
+    def fillWithZeros(self, count, number = None):
+        pass
 
 #    @abstractmethod
 #    def subtract(numOne = None, numTwo = None):
@@ -57,3 +57,7 @@ class Number(ABC):
 #    @abstractmethod
 #    def modulus(numOne = None, by = None):
 #        pass
+
+    @abstractmethod
+    def NOT(self, binary = None):
+        pass

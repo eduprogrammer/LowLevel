@@ -2,55 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d692c1a-2e42-4ddf-9921-70ffed25bfdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/allclasses-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/allpackages-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/Binary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/LowLevel.NumberSystem.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/LowLevel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/LowLevelException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/Number.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/OutsideDecimal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/com/eduardoprogramador/lowlevel/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/copy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/element-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/index-all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/jquery-ui.overrides.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/legal/COPYRIGHT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/legal/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/legal/jquery.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/legal/jqueryUI.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/member-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/module-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/package-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/resources/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/resources/x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/jquery-3.5.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/tag-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/doc.html/type-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LowLevel/Binary.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowLevel/Binary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LowLevel/Number.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowLevel/Number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LowLevel/Tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowLevel/Tutorial.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
