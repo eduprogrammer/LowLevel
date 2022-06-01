@@ -18,5 +18,5 @@ list = Number.listNumberTypes()
 puts("List is: " + list.to_s)
 
 el = Binary.new()
-num = el.smallest("11001","00110")
+num = el.smallest("0010011","11000")
 puts("num1 is: " + num.to_s)

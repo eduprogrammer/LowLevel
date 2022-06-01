@@ -23,8 +23,8 @@ res2 = Number.listNumberTypes()
 print(res2)
 
 binary = Binary()
-res3 = binary.toDecimal("101110")
-print("res3: " + res3)
+res3 = binary.NOT("101010")
+print("res4: " + res3)
 
 
 
