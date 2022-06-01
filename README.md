@@ -1,6 +1,6 @@
 Low Level Library<br>
 Copyright 2022. Eduardo Programador<br>
-<br><br>...
+<br><br>.....
 A set of low level functions for handle operations <br>
 with number outside the decimal System in many languages.<br>
 <br>
