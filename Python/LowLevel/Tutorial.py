@@ -23,8 +23,9 @@ res2 = Number.listNumberTypes()
 print(res2)
 
 binary = Binary()
-res3 = binary.NOT("101010")
+res3 = binary.subtract("101010","110")
 print("res4: " + res3)
+
 
 
 
