@@ -26,9 +26,9 @@ class Number(ABC):
     def toDecimal(self,number = None):
         pass
 
-#    @abstractmethod
-#    def add(numOne = None, numTwo = None):
-#        pass
+    @abstractmethod
+    def add(self, numOne = None, numTwo = None):
+        pass
 
     @abstractmethod
     def smallest(self, numOne = None, numTwo = None):
@@ -42,9 +42,9 @@ class Number(ABC):
     def fillWithZeros(self, count, number = None):
         pass
 
-#    @abstractmethod
-#    def subtract(numOne = None, numTwo = None):
-#        pass
+    @abstractmethod
+    def subtract(self, numOne = None, numTwo = None):
+        pass
 
 #    @abstractmethod
 #    def multiply(num = None, by = None):

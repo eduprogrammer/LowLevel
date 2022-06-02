@@ -6,7 +6,7 @@
 #*   All Rights Reserved.
 #*
 #* */
-
+from LowLevel import *
 from Number import *
 
 class Binary(Number):
@@ -157,5 +157,152 @@ class Binary(Number):
                 i += 1
             return res
 
-    #code add, subtract, divide, modulus and adjust smallest method in Java, C++, PHP, Ruby and Javascript
+    def add(self, numOne = None, numTwo = None):
+            if numOne is None or numTwo is None:
+                if self._first is None or self._second is None:
+                    raise LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.")
+                else:
+                    res = ""
+                    next = -1
+
+                    one = self.cutZeros(self._first)
+                    two = self.cutZeros(self._second)
+
+                    if len(one) != len(two):
+                        if self.smallest(one, two) == 0:
+                            one = self.fillWithZeros(len(two) - len(one), one)
+                        else:
+                            two = self.fillWithZeros(len(one) - len(two), two)
+
+                    i = len(one) - 1
+                    while i > -1:
+                        bitOne =  1 if one[i] == '1' else 0
+                        bitTwo = 1 if two[i] == '1' else 0
+
+                        sum = bitOne + bitTwo
+
+                        if next != -1:
+                            sum += next
+                            next = -1
+
+                        match sum:
+                            case 0:
+                                res += "0"
+                                next = -1
+
+                            case 1:
+                                res += "1"
+                                next = -1
+
+                            case 2:
+                                res += "0"
+                                next = 1
+
+                            case 3:
+                                res += "1"
+                                next = 1
+
+                        i -= 1
+
+                    if next != -1:
+                        res += str(next)
+                    return LowLevel.reversed(res)
+            else:
+                res = ""
+                next = -1
+
+                one = self.cutZeros(numOne)
+                two = self.cutZeros(numTwo)
+
+                if len(one) != len(two):
+                    if self.smallest(one, two) == 0:
+                        one = self.fillWithZeros(len(two) - len(one), one)
+                    else:
+                        two = self.fillWithZeros(len(one) - len(two), two)
+
+                i = len(one) - 1
+                while i > -1:
+                    bitOne = 1 if one[i] == '1' else 0
+                    bitTwo = 1 if two[i] == '1' else 0
+
+                    sum = bitOne + bitTwo
+
+                    if next != -1:
+                        sum += next
+                        next = -1
+
+                    match sum:
+                        case 0:
+                            res += "0"
+                            next = -1
+
+                        case 1:
+                            res += "1"
+                            next = -1
+
+                        case 2:
+                            res += "0"
+                            next = 1
+
+                        case 3:
+                            res += "1"
+                            next = 1
+
+                    i -= 1
+
+                if next != -1:
+                    res += str(next)
+                return LowLevel.reversed(res)
+
+
+
+    def subtract(self, numOne = None, numTwo = None):
+        if numOne is None or numTwo is None:
+            if self._first is None or self._second is None:
+                raise LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.")
+            else:
+                if self.smallest(self._first, self._second) == 0:
+                    raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+                else:
+                    if self._second == "0":
+                        return self._first
+                    self._second = self.fillWithZeros(len(self._first) - len(self._second),self._second)
+                    self._second = self.NOT(self._second)
+                    self._second = self.add(self._second,"1")
+
+                    prov = self.add(self._first, self._second)
+                    res = ""
+                    i = 1
+                    while i < len(prov):
+                        if prov[i] == '1':
+                            res += "1"
+                        else:
+                            res += "0"
+                        i += 1
+
+                    return self.cutZeros(res)
+        else:
+            if self.smallest(numOne, numTwo) == 0:
+                raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+            else:
+                if numTwo == "0":
+                    return numOne
+                numTwo = self.fillWithZeros(len(numOne) - len(numTwo), numTwo)
+                numTwo = self.NOT(numTwo)
+                numTwo = self.add(numTwo, "1")
+
+                prov = self.add(numOne, numTwo)
+                res = ""
+                i = 1
+                while i < len(prov):
+                    if prov[i] == '1':
+                        res += "1"
+                    else:
+                        res += "0"
+                    i += 1
+
+                return self.cutZeros(res)
+        pass
+
+    #code multiply divide, modulus and adjust smallest method in Java, C++, PHP, Ruby and Javascript
 
