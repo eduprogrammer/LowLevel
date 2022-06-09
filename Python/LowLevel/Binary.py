@@ -6,6 +6,7 @@
 #*   All Rights Reserved.
 #*
 #* */
+from LowLevelException import *
 from LowLevel import *
 from Number import *
 
@@ -116,18 +117,44 @@ class Binary(Number):
             if self._first is None or self._second is None:
                 raise LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.")
             else:
-                one = self.cutZeros(self._first)
-                two = self.cutZeros(self._second)
+                filterOne = self.cutZeros(self._first)
+                filterTwo = self.cutZeros(self._second)
+                zeroOne = 0
+                zeroTwo = 0
+                i = 0
+                while i < len(filterOne):
+                    if filterOne[i] == '1':
+                        zeroOne += i
+                    i += 1
 
-                if int(self.toDecimal(one)) <= int(self.toDecimal(two)):
+                i = 0
+                while i < len(filterTwo):
+                    if filterTwo[i] == '1':
+                        zeroTwo += i
+                    i += 1
+
+                if zeroOne < zeroTwo:
                     return 0
-                else:
+                else :
                     return 1
         else:
-            one = self.cutZeros(numOne)
-            two = self.cutZeros(numTwo)
+            filterOne = self.cutZeros(numOne)
+            filterTwo = self.cutZeros(numTwo)
+            zeroOne = 0
+            zeroTwo = 0
+            i = 0
+            while i < len(filterOne):
+                if filterOne[i] == '1':
+                    zeroOne += i
+                i += 1
 
-            if int(self.toDecimal(one)) <= int(self.toDecimal(two)):
+            i = 0
+            while i < len(filterTwo):
+                if filterTwo[i] == '1':
+                    zeroTwo += i
+                i += 1
+
+            if zeroOne < zeroTwo:
                 return 0
             else:
                 return 1
@@ -254,15 +281,14 @@ class Binary(Number):
                     res += str(next)
                 return LowLevel.reversed(res)
 
-
-
     def subtract(self, numOne = None, numTwo = None):
         if numOne is None or numTwo is None:
             if self._first is None or self._second is None:
                 raise LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.")
             else:
                 if self.smallest(self._first, self._second) == 0:
-                    raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+                    #raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+                    pass
                 else:
                     if self._second == "0":
                         return self._first
@@ -283,7 +309,8 @@ class Binary(Number):
                     return self.cutZeros(res)
         else:
             if self.smallest(numOne, numTwo) == 0:
-                raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+                #raise LowLevelException("You must place the biggest number at the first parameter, and the smallest at the second one.")
+                pass
             else:
                 if numTwo == "0":
                     return numOne
@@ -304,5 +331,112 @@ class Binary(Number):
                 return self.cutZeros(res)
         pass
 
-    #code multiply divide, modulus and adjust smallest method in Java, C++, PHP, Ruby and Javascript
+    def multiply(self, num = None, by = None):
+        if num is None or by is None:
+            if self._first is None or self._second is None:
+                raise LowLevelException("You must to call the Binary construct that has 2 valid binary numbers.")
+            else:
+                if self._second == "1":
+                    return self._first
+                if self._first == "0" or self._second == "0":
+                    return "0"
+                twoInDecimal = self.toDecimal(self._second)
+                two = int(twoInDecimal)
+                res = self._first
+                i = 0
+                while i < two - 1:
+                    res = self.add(res, self._first)
+                    i += 1
+                return res
+        else:
+            #code...
+            if by == "1":
+                return num
+            if num == "0" or by == "0":
+                return "0"
+            twoInDecimal = self.toDecimal(by)
+            two = int(twoInDecimal)
+            res = num
+            i = 0
+            while i < two - 1:
+                res = self.add(res, num)
+                i += 1
+            return res
+
+    def divide(self, numOne = None, by = None):
+        if numOne is None or by is None:
+            div = ""
+            quotient = ""
+            nowQuo = ""
+            i_ = 0
+            while i_ < len(self._first):
+                now = 1 if self._first[i_] == '1' else 0
+                div = div + str(now)
+                if self.smallest(div, self._second) == 0:
+                    quotient += '0'
+                    nowQuo = '0'
+                else:
+                    quotient += '1'
+                    nowQuo = '1'
+                mul = self.multiply(self._second, nowQuo)
+                div = self.subtract(div, mul)
+                i_ += 1
+            return self.cutZeros(quotient)
+        else:
+            div = ""
+            quotient = ""
+            nowQuo = ""
+            i_ = 0
+            while i_ < len(numOne):
+                now = 1 if numOne[i_] == '1' else 0
+                div = div + str(now)
+                if self.smallest(div, by) == 0:
+                    quotient += '0'
+                    nowQuo = '0'
+                else:
+                    quotient += '1'
+                    nowQuo = '1'
+                mul = self.multiply(by, nowQuo)
+                div = self.subtract(div, mul)
+                i_ += 1
+            return self.cutZeros(quotient)
+
+    def modulus(self, numOne = None, by = None):
+        if numOne is None or by is None:
+            div = ""
+            quotient = ""
+            nowQuo = ""
+            i_ = 0
+            while i_ < len(self._first):
+                now = 1 if self._first[i_] == '1' else 0
+                div = div + str(now)
+                if self.smallest(div, self._second) == 0:
+                    quotient += '0'
+                    nowQuo = '0'
+                else:
+                    quotient += '1'
+                    nowQuo = '1'
+                mul = self.multiply(self._second, nowQuo)
+                div = self.subtract(div, mul)
+                i_ += 1
+            return self.cutZeros(div)
+        else:
+            div = ""
+            quotient = ""
+            nowQuo = ""
+            i_ = 0
+            while i_ < len(numOne):
+                now = 1 if numOne[i_] == '1' else 0
+                div = div + str(now)
+                if self.smallest(div, by) == 0:
+                    quotient += '0'
+                    nowQuo = '0'
+                else:
+                    quotient += '1'
+                    nowQuo = '1'
+                mul = self.multiply(by, nowQuo)
+                div = self.subtract(div, mul)
+                i_ += 1
+            return self.cutZeros(div)
+
 

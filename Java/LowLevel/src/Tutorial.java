@@ -27,10 +27,10 @@ import com.eduardoprogramador.lowlevel.LowLevelException;
 public class Tutorial {
     public static void main(String[] args) {
 
-        Binary binary = new Binary("11010");
+        Binary binary = new Binary("101010","101");
 
         try {
-            String res = "" + binary.toDecimal();
+            String res = "" + binary.divide();
             System.out.println(res);
         } catch (LowLevelException ex) {
             ex.printStackTrace();

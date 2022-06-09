@@ -430,6 +430,7 @@ public class Binary extends Number {
             String mul = multiply(second, nowQuo);
             div = subtract(div,mul);
         }
+
         return cutZeros(quotient);
     }
 
