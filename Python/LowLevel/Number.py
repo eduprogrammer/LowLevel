@@ -46,17 +46,17 @@ class Number(ABC):
     def subtract(self, numOne = None, numTwo = None):
         pass
 
-#    @abstractmethod
-#    def multiply(num = None, by = None):
-#        pass
+    @abstractmethod
+    def multiply(self, num = None, by = None):
+        pass
 
-#    @abstractmethod
-#    def divide(numOne = None, by = None):
-#        pass
+    @abstractmethod
+    def divide(self, numOne = None, by = None):
+        pass
 
-#    @abstractmethod
-#    def modulus(numOne = None, by = None):
-#        pass
+    @abstractmethod
+    def modulus(numOne = None, by = None):
+        pass
 
     @abstractmethod
     def NOT(self, binary = None):

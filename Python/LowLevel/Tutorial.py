@@ -23,8 +23,9 @@ res2 = Number.listNumberTypes()
 print(res2)
 
 binary = Binary()
-res3 = binary.subtract("101010","110")
-print("res4: " + res3)
+res3 = binary.modulus("1110","0101")
+
+print(res3)
 
 
 

@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d692c1a-2e42-4ddf-9921-70ffed25bfdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/out/artifacts/LowLevel_jar/LowLevel.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/LowLevel/out/artifacts/LowLevel_jar/LowLevel.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/out/production/LowLevel/Tutorial.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/LowLevel/out/production/LowLevel/Tutorial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/out/production/LowLevel/com/eduardoprogramador/lowlevel/Binary.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/LowLevel/out/production/LowLevel/com/eduardoprogramador/lowlevel/Binary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/src/Tutorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/LowLevel/src/Tutorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/LowLevel/src/com/eduardoprogramador/lowlevel/Binary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/LowLevel/src/com/eduardoprogramador/lowlevel/Binary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javascript/tutorial.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LowLevel/Binary.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowLevel/Binary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LowLevel/Number.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowLevel/Number.py" afterDir="false" />
